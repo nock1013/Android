@@ -1,13 +1,11 @@
 package multi.android.support_lib.fragment.exam;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import multi.android.support_lib.R;
 
@@ -19,11 +17,13 @@ public class FragmentExam extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager_main);
+        setContentView(R.layout.linear02);
 
     }
     public void btn_click(View view){
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        setFragment(view.getTag().toString());
+        /*FragmentManager fragmentManager = getSupportFragmentManager();
+        //프레그먼트의 변화를 관리하는 객체
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (view.getTag().toString()){
             case "0":
@@ -36,7 +36,25 @@ public class FragmentExam extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.container,viewFragment3);
                 break;
         }
+        fragmentTransaction.commit();*/
+    }
+     public void setFragment(String idx){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        //프레그먼트의 변화를 관리하는 객체
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        switch (idx){
+            case "0":
+                fragmentTransaction.replace(R.id.container,viewFragment1);
+                break;
+            case "1":
+                fragmentTransaction.replace(R.id.container,viewFragment2);
+                break;
+            case "2":
+                fragmentTransaction.replace(R.id.container,viewFragment3);
+                break;
+        }
         fragmentTransaction.commit();
+
     }
 
 }

@@ -48,4 +48,5 @@ public class DBHandler {
                 new String[]{str},null,null,null);
         return cursor;
     }
+
 }
