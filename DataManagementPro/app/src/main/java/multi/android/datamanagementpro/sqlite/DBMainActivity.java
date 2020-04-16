@@ -61,7 +61,6 @@ public class DBMainActivity extends AppCompatActivity {
                         "성명 :"+name+"\n"+
                         "나이 :"+age+"\n"+
                         "=========================\n");
-
         }
     }
     public void update(View v){
