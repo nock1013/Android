@@ -5,29 +5,21 @@
     <uses-permission android:name="com.exam.permission.JAVA_PERMISSION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".filesystem.Exam_Read_Writer" />
-        <activity android:name=".filesystem.ExternalFileMgr" />
-        <activity android:name=".filesystem.InternalFileMgr" />
-        <activity android:name=".Permission.RuntimePermissionTest" />
-        <activity android:name=".Permission.BasicPermissionTest" />
-        <activity android:name=".Permission.UseCustomPermission" />
-        <activity android:name="preference.SharedPerferenceTest" />
-        <activity android:name=".sqlite.DBMainActivity" />
-        <activity android:name=".sqlite.DBMainActivity_ContentValues" />
-        <activity android:name=".sqlite.exam.ReadActivity" />
-        <activity android:name=".sqlite.exam.MainActivity">
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
+       <!-- <activity android:name=".filesystem.ExternalFileMgr"></activity>-->
+        <!-- <activity android:name=".filesystem.InternalFileMgr"></activity> -->
+        <activity android:name=".permission.BasicPermissionTest" />
+        <activity android:name=".permission.UseCustomPermission" />
+        <activity android:name=".sqlite.DBMainActivity_ContentValues">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

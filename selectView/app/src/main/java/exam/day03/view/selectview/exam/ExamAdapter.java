@@ -35,6 +35,7 @@ public class ExamAdapter extends ArrayAdapter<ActorItem> {
     }
 
 
+
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         if(convertView==null){
@@ -45,12 +46,13 @@ public class ExamAdapter extends ArrayAdapter<ActorItem> {
             ViewHolder itemView = new ViewHolder(convertView);
             convertView.setTag(itemView);
             convertView.setTag(R.string.app_name,value);
-            Log.d("firstjob","최초작업==>"+data.get(position).name+
-                    "=====>convertView:::::::::"+convertView+"::::"+value);
+            Log.d("firstjob","최초작업==>"+data.get(position).name
+                    +"=======>convertView::::::"+convertView+":::"+value);
         }
 
         ViewHolder itemView = (ViewHolder)convertView.getTag();
         ActorItem actorItem = data.get(position);
+
         if(actorItem!=null) {
             ImageView myimg = itemView.myimg;
             final TextView nameView = itemView.nameView;
@@ -69,10 +71,10 @@ public class ExamAdapter extends ArrayAdapter<ActorItem> {
             }else{
                 Log.d("check","널아님"+position);
                 chkVal.setChecked(state.check);
-
             }
-            Log.d("getview", actorItem.toString()+"****************************"+
-                    convertView.getTag(R.string.app_name)+"********************"+convertView);
+         Log.d("getview",actorItem.toString()+"********************"+
+                    convertView.getTag(R.string.app_name)+"********************"+
+                    convertView);
          chkVal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -83,6 +85,8 @@ public class ExamAdapter extends ArrayAdapter<ActorItem> {
                     userStateValue.put(position,state);
                 }
             });
+
+         
 
         }
         return  convertView;

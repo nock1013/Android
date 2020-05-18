@@ -33,7 +33,5 @@
             android:layout_height="wrap_content"
             android:src="@drawable/dream02"
             />
-        
-        
     </FrameLayout>
 </LinearLayout>

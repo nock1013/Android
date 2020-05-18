@@ -17,14 +17,15 @@ public class SecondActivity extends AppCompatActivity {
         Button bt2 = findViewById(R.id.bt2);
         //인텐트 객체 추출
         Intent intent = getIntent();
-        //인텐트 객체에서 공유된 값을 꺼내기 - 받는 쪽
+        //인텐트 객체에서 공유된 값을 꺼내기
         String msg = intent.getStringExtra("info");
-        int data = intent.getIntExtra("num",0);
-        Toast.makeText(this,"추출한 값:"+msg+","+data,Toast.LENGTH_LONG).show();
+        int data = intent.getIntExtra("num1",0);
+        Toast.makeText(this,"추출한 값:"+msg+","+data,
+                            Toast.LENGTH_LONG).show();
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();//엑티비티 종료
+                finish();//액티비티 종료
             }
         });
 

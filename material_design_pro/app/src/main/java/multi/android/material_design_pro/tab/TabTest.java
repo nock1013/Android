@@ -3,7 +3,7 @@ package multi.android.material_design_pro.tab;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -20,10 +20,10 @@ import multi.android.material_design_pro.exam.ViewFragment1;
 import multi.android.material_design_pro.exam.ViewFragment3;
 
 public class TabTest extends AppCompatActivity {
-    ViewFragment1 viewFragment1;
-    ListFragment viewFragment2;
-    ViewFragment3 viewFragment3;
-    ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
+    ViewFragment1 viewFragment1 ;
+    ListTestFragment viewFragment2;
+    ViewFragment3 viewFragment3 ;
+    ArrayList<Fragment> fragmentArrayList = new ArrayList<Fragment>();
     TabLayout tabLayout;
     BottomNavigationView bottomNavigationView;
     @Override
@@ -46,16 +46,17 @@ public class TabTest extends AppCompatActivity {
 
         //탭에 이벤트 연결하기
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            //탭이 선택될때 호출되는 메소드
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition(); //탭의 순서를 받아오기
+                int position = tab.getPosition();//탭의 순서를 받아오기
                 Log.d("tab",position+"");
                 Fragment fragment = null;
-                if (position==0){
+                if(position==0){
                     fragment = viewFragment1;
-                }else if (position==1){
+                }else if(position ==1){
                     fragment = viewFragment2;
-                }else {
+                }else{
                     fragment = viewFragment3;
                 }
                 //탭을 선택할 때 지정된 프레그먼트 객체가 show되도록 연결
@@ -73,18 +74,27 @@ public class TabTest extends AppCompatActivity {
 
             }
         });
-
         //BottomNavigationView이벤트 연결
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 if(menuItem.getItemId()==R.id.bottom_item2){
                     getSupportFragmentManager().beginTransaction().
-                        replace(R.id.content_container,viewFragment2).commit();
+                       replace(R.id.content_container,viewFragment2).commit();
                 }
                 return false;
             }
         });
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+

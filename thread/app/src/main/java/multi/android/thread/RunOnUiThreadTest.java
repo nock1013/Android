@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class RunOnUiThreadTest extends AppCompatActivity {
     TextView view1;
     TextView view2;
-    boolean isRunning = true;
+    boolean isRunning=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,6 @@ public class RunOnUiThreadTest extends AppCompatActivity {
 
         new MyThread().start();
     }
-
     public void btn_click(View view){
         long now_time = System.currentTimeMillis();
         view1.setText(now_time+"");
@@ -30,7 +29,7 @@ public class RunOnUiThreadTest extends AppCompatActivity {
     class MyThread extends Thread{
         @Override
         public void run() {
-            while (isRunning){
+            while(isRunning){
                 SystemClock.sleep(1000);
                 final long now_time = System.currentTimeMillis();
                 Log.d("mythread",now_time+"");
@@ -41,6 +40,7 @@ public class RunOnUiThreadTest extends AppCompatActivity {
                         view2.setText("화면에 대한 처리:"+now_time);
                     }
                 });
+
             }
         }
     }

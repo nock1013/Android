@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class Text_Exam extends AppCompatActivity {
     EditText txtarea1;
     EditText txtarea2;
@@ -18,15 +15,14 @@ public class Text_Exam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.text_exam);
-
         txtarea1 = findViewById(R.id.area1);
         txtarea2 = findViewById(R.id.area2);
         inputdata = findViewById(R.id.input);
-        Button btngetter = findViewById(R.id.send);
-        btngetter.setOnClickListener(new View.OnClickListener() {
+        Button send = findViewById(R.id.send);
+
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //append 누적
                 txtarea1.append(inputdata.getText()+"\n");
                 txtarea2.append(inputdata.getText()+"\n");
                 inputdata.setText("");

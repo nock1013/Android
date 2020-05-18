@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="multi.android.permissiontestpro">
-    
 
     <application
         android:allowBackup="true"
@@ -12,19 +11,32 @@
         android:theme="@style/AppTheme">
         <!--2. 퍼미션 설정하기-->
         <activity android:name=".SelectView_ExamActivity"
-            android:permission="com.exam.permission.JAVA_PERMISSION">
+                android:permission="com.exam.permission.JAVA_PERMISSION">
             <intent-filter>
                 <action android:name="com.exam.selectview"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
     <permission android:name="com.exam.permission.JAVA_PERMISSION"
         android:label="JAVA_PERMISSION"
         android:description="@string/per_msg"
         android:protectionLevel="normal"
         />
-
-
 </manifest>
+
+
+
+
+
+
+
+
+

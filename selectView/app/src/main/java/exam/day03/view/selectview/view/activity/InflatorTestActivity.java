@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import exam.day03.view.selectview.R;
 
 public class InflatorTestActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +23,7 @@ public class InflatorTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LayoutInflater inflater =
-                        (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(R.layout.include_view,container,true);
             }
         });

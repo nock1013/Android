@@ -12,6 +12,7 @@ public class ProgressBarActivity extends AppCompatActivity {
     Button btn1;
     Button btn2;
     Button btn3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

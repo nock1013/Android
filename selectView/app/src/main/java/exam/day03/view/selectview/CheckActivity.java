@@ -1,7 +1,6 @@
 package exam.day03.view.selectview;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -39,7 +38,7 @@ public class CheckActivity extends AppCompatActivity {
         myswitch = findViewById(R.id.switch1);
         CheckBoxListener listener = new CheckBoxListener();
         // 체크박스에 리스너를 설정한다.
-        for(int i=0;i<checkArr.length;i++){
+        for (int i=0;i<checkArr.length;i++){
             checkArr[i].setOnCheckedChangeListener(listener);
         }
         myswitch.setOnCheckedChangeListener(listener);
@@ -48,40 +47,37 @@ public class CheckActivity extends AppCompatActivity {
         clearCheckBtn.setOnClickListener(listener);
         reverseCheckStats.setOnClickListener(listener);
     }
-//이벤트를 처리하는 기능을 하는 것이 Listener
     //체크박스들의 상태를 TextView에 출력하기
     public void getCheckStatus(){
         text1.setText("");
         for(int i=0;i<checkArr.length;i++){
+            //isChecked()는 체크박스가 선택되어 있으면 true리턴
             if(checkArr[i].isChecked()){
-                //isCheked()는 체크박스가 선택되어 있으면 true리턴
                 String tag = (String)checkArr[i].getTag();
-                text1.append(tag+"번째 체크박스가 체크가 설정됨\n");
+                text1.append(tag+"번 체크박스가 체크가 설정됨\n");
             }
 
         }
     }
     //모든 체크박스의 상태를 체크 상태로 설정 - 매개변수를 이용해서 설정 및 해제
-    public void setCheckVal(boolean chkVal) {
-        for (int i = 0; i < checkArr.length; i++) {
-            checkArr[i].setChecked(chkVal);
-
-
+    public void setCheckVal(boolean chkVal){
+        for(int i=0;i<checkArr.length;i++){
+           checkArr[i].setChecked(chkVal);
         }
     }
     //체크박스가 선택되어 있으면 해제, 해제되어 있으면 선택
     public void toggle(){
-            for (int i=0;i<checkArr.length;i++){
-                checkArr[i].toggle();
-            }
+        for(int i=0;i<checkArr.length;i++){
+            checkArr[i].toggle();
         }
-
-        class CheckBoxListener
-            implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
+    }
+    class CheckBoxListener
+            implements CompoundButton.OnCheckedChangeListener,
+                        View.OnClickListener {
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
+            switch (v.getId()){
                 case R.id.btnCheck1:
                     setCheckVal(true);
                     break;
@@ -93,39 +89,42 @@ public class CheckActivity extends AppCompatActivity {
                     break;
                 case R.id.btnCheck4:
                     toggle();
+
             }
         }
         //체크박스의 상태가 변경될때 호출되는 메소드
-        //체크박스와 스위치가 선택되면 Toast로 "xxx체크 박스 선택",
-        //해제되면 "xxx체크 박스 해제"
+        //체크박스와 스위치가 선택되면 Toast로 "XXX체크 박스 선택",
+        // 해제되면 "XXX체크 박스 해제"
         //스위치도 체크 해제에 따라 토스트 출력
-        public void display(int index,TextView textView ,boolean checkState ){
-            if(checkState) {
-                textView.setText(index + "번째 체크박스가 선택");
-            }else {
-                textView.setText(index + "번째 체크박스가 해제");
+        public void display(int index,TextView txtView,boolean checkState ){
+            if(checkState){
+                txtView.setText(index+"번째 체크박스가 선택");
+            }else{
+                txtView.setText(index+"번째 체크박스가 해제");
             }
         }
         @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                /*Log.d("onCheckedChanged",
-                        buttonView.toString()+"::::"+isChecked);*/
-                if(buttonView instanceof CheckBox){
-                    //체크되면 TextView에 체크 메시지가 출력
-                    display(Integer.parseInt(buttonView.getTag()+""),text1,isChecked);
-                    Log.d("check","체크박스");
-                }else {
-                    Log.d("check","switch");
-                    if(buttonView.getId()==R.id.switch1){
-                        String msg = "";
-                        if(buttonView.isChecked()){
-                            msg = "활성";
-                        }else {
-                            msg = "비활성";
-                        }
-                        Toast.makeText(CheckActivity.this, msg, Toast.LENGTH_SHORT).show();
+        public void onCheckedChanged(CompoundButton buttonView,
+                                     boolean isChecked) {
+           /* Log.d("onCheckedChanged",
+                    buttonView.toString()+"::::"+isChecked);*/
+            if(buttonView instanceof CheckBox){
+                //체크되면 TextView에 체크 메시지가 출력
+                display(Integer.parseInt(buttonView.getTag()+"")
+                                            ,text1,isChecked);
+            }else{
+                if(buttonView.getId()==R.id.switch1){
+                    String msg = "";
+                    if(buttonView.isChecked()){
+                        msg = "활성";
+                    }else{
+                        msg = "비활성";
                     }
+                    Toast.makeText(CheckActivity.this,
+                            msg,Toast.LENGTH_LONG).show();
                 }
+            }
         }
     }
+
 }

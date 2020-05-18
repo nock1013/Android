@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HandlerExam">
-
     <TextView
         android:id="@+id/numView"
         android:layout_width="match_parent"
@@ -16,15 +15,12 @@
         android:textSize="250sp"
         android:gravity="center_horizontal"
         />
+
     <Button
-        android:id="@+id/numBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="숫자 출력하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:onClick="btn_click"
         />
-
-
-
-
 </LinearLayout>

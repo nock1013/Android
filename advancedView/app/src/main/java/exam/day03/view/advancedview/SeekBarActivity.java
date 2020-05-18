@@ -9,7 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SeekBarActivity extends AppCompatActivity
-        implements View.OnClickListener,SeekBar.OnSeekBarChangeListener{
+                implements  View.OnClickListener,
+                            SeekBar.OnSeekBarChangeListener {
 
     // 뷰의 주소 값을 담을 참조변수
     SeekBar seek1, seek2;
@@ -41,14 +42,15 @@ public class SeekBarActivity extends AppCompatActivity
 
         seek1.setOnSeekBarChangeListener(this);
         seek2.setOnSeekBarChangeListener(this);
-        /*SeekBarListener listener = new SeekBarListener();*/
-    }
 
+       // SeekBarListener listener = new SeekBarListener();
+       
+    }
     //버튼을 클릭할때 자동으로 호출되는 메소드
     //매개변수로 전달되는 View가 이벤트를 발생시키는 소스객체
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch(v.getId()){
             case R.id.seekBtn1:
                 //값을 증가시키기
                 seek1.incrementProgressBy(1);
@@ -61,7 +63,6 @@ public class SeekBarActivity extends AppCompatActivity
                 break;
             case R.id.seekBtn3:
                 //값을 설정하기
-
                 seek1.setProgress(5);
                 seek2.setProgress(7);
                 break;
@@ -73,26 +74,25 @@ public class SeekBarActivity extends AppCompatActivity
                 break;
         }
     }
-    //SeekBar에 값이 변경되었을때 호출되는 메소드
+    //SeekBar의 값이 변경되었을때 호출되는 메소드
     @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
+    public void onProgressChanged(SeekBar seekBar, int progress,
+                                  boolean fromUser) {
         int id = seekBar.getId();
 
         switch (id){
             case R.id.seekBar:
-                text1.setText("첫 번째 seekBar:"+progress);
+                text1.setText("첫 번째 seekbar:"+progress);
                 break;
             case R.id.seekBar2:
-                text1.setText("두 번째 seekBar:"+progress);
+                text1.setText("두 번째 seekbar:"+progress);
         }
         if(fromUser){
             text2.setText("사용자가 변경");
-        }else {
+        }else{
             text2.setText("코드로 변경");
         }
     }
-
     //값을 변경하기 위해서 seekbar에 터치를 시작할때
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -100,10 +100,10 @@ public class SeekBarActivity extends AppCompatActivity
 
         switch (id){
             case R.id.seekBar:
-                text1.setText("첫 번째 seekBar를 터치 시작");
+                text1.setText("첫 번째 SeekBar를 터치 시작");
                 break;
             case R.id.seekBar2:
-                text1.setText("두 번째 seekBar를 터치 시작");
+                text1.setText("두 번째 SeekBar를 터치 시작");
         }
     }
     //값을 변경을 끝내고 seekbar에 터치를 끝낼때
@@ -113,10 +113,10 @@ public class SeekBarActivity extends AppCompatActivity
 
         switch (id){
             case R.id.seekBar:
-                text1.setText("첫 번째 seekBar를 터치 종료");
+                text1.setText("첫 번째 SeekBar를 터치 종료");
                 break;
             case R.id.seekBar2:
-                text1.setText("두 번째 seekBar를 터치 종료");
+                text1.setText("두 번째 SeekBar를 터치 종료");
         }
     }
 }

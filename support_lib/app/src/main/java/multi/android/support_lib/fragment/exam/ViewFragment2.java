@@ -1,12 +1,11 @@
 package multi.android.support_lib.fragment.exam;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import multi.android.support_lib.R;
 

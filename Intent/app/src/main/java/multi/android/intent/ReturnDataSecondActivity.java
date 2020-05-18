@@ -27,17 +27,17 @@ public class ReturnDataSecondActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				switch (code){
-					case  "call2" :
+					case "call2":
 						String data = intent.getStringExtra("data");
 						txt.setText(data);
 
-						intent.putExtra("second","두 번째 액티비티에서 실행 완료");
+						intent.putExtra("second",
+								"두번째 액티비티에서 실행 완료");
 						//실행 후에 호출한 액티비티로 되돌아가기
 						//되돌아갈때 값을 공유하기 위해 intent객체를 넘긴다.
 						setResult(RESULT_OK,intent);
 						finish();
 				}
-
 			}
 		});
 	}

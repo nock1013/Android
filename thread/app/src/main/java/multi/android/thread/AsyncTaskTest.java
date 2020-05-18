@@ -19,33 +19,32 @@ public class AsyncTaskTest extends AppCompatActivity {
         view1 = findViewById(R.id.txtView1);
         view2 = findViewById(R.id.txtView2);
 
-        AsysncTaskExam asysncTaskExam = new AsysncTaskExam();
+        AsyncTaskExam asyncTaskExam = new AsyncTaskExam();
         //매개변수를 정의하면 매개변수가 doInBackground를 호출할때 전달
-        asysncTaskExam.execute(10,20);
-
+        asyncTaskExam.execute(10,20);
     }
     public void btn_click(View view){
         long now_time = System.currentTimeMillis();
-        view1.setText(now_time+"");
+		view1.setText(now_time+"");
     }
-
     //AsyncTask클래스를 상속하여 작업할 클래스를 정의
-    //Void 타입을 설정 안함
-    class AsysncTaskExam extends AsyncTask<Integer,Long,String>{
+    //Void
+    class AsyncTaskExam extends AsyncTask<Integer, Long, String>{
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Log.d("myasync","onPreExecute호출..작업시작");
+            Log.d("myasync","onPreExecute호출..작업시작...");
         }
-
-        @Override  //run처리랑 비슷
+        @Override
         protected String doInBackground(Integer... integers) {
             int num1 = integers[0];
             int num2 = integers[1];
             for(int i=1;i<=10;i++){
                 SystemClock.sleep(1000);
-                Log.d("myasync","i="+i+", num1="+num1+", num2="+num2);
+                Log.d("myasync","i="+i+",num1="+num1+
+                        ",num2="+num2);
                 long now_time = System.currentTimeMillis();
+                //발생되는 값으로 ui를 변경하고 싶은 경우
                 publishProgress(now_time);
             }
             return "모든 처리 작업이 완료";

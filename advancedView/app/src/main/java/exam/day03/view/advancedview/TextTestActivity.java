@@ -37,7 +37,7 @@ public class TextTestActivity extends AppCompatActivity {
                 txtinfo.setText("가져온 문자열:작업완료");
             }
         });
-        //EditText에서  데이터를 입력할때 이벤트 발생
+        //EditText에서 데이터를 입력할때 이벤트 발생
         WatcherListener listener = new WatcherListener();
         txtinfo.addTextChangedListener(listener);
     }
@@ -45,14 +45,16 @@ public class TextTestActivity extends AppCompatActivity {
     class WatcherListener implements TextWatcher{
         //문자값이 변경되기 전에 호출
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        public void beforeTextChanged(CharSequence s, int start,
+                                                    int count, int after) {
 
         }
         //문자의 값이 변경되었을 때 호출
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            Log.d("wather","s:"+s+",start:"+start+",");
-            lblinfo.setText("문자열이 변경되고 있음........."+s);
+        public void onTextChanged(CharSequence s, int start,
+                                                int before, int count) {
+            Log.d("watcher","s:"+s+",start:"+start+",");
+            lblinfo.setText("문자열이 변경되고 있음......"+s);
         }
         //문자값이 변경된 후에 호출
         @Override
@@ -61,3 +63,15 @@ public class TextTestActivity extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

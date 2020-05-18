@@ -20,40 +20,40 @@ public class BasicAppRun extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_use_other_app);
+        setContentView(R.layout.activity_basic_app_run);
 
-        //액티비티가 만들어질때 권한체크메소드를 호출
+        //권한체크 메소드를 호출
         runPermission();
     }
     //구글맵실행
     public void runGoogleMap(View v){
         Uri uri = Uri.parse("geo:37.501579,127.039585");
-        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        Intent intent = new  Intent(Intent.ACTION_VIEW,uri);
         startActivity(intent);
     }
     //웹브라우저실행
     public void runWeb(View v){
         Uri uri = Uri.parse("https://www.daum.net");
-        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        Intent intent = new  Intent(Intent.ACTION_VIEW,uri);
         startActivity(intent);
     }
-    //전화걸기화면 실행
+    //전화걸기화면만 실행
     public void runDial(View v){
         Uri uri = Uri.parse("tel:00000000");
-        Intent intent = new Intent(Intent.ACTION_DIAL,uri);
+        Intent intent = new  Intent(Intent.ACTION_DIAL,uri);
         startActivity(intent);
     }
     //실제 전화 걸기 위한 메소드
     public void runCallPhone(View v){
         Intent intent = null;
-        int chk = PermissionChecker.checkCallingOrSelfPermission(this,
+        int chk = PermissionChecker.checkSelfPermission(this,
                 Manifest.permission.CALL_PHONE);
         if(chk==PackageManager.PERMISSION_GRANTED){
-            Log.d("tel","성공띠~");
+            Log.d("tel","성공");
             intent = new Intent(Intent.ACTION_CALL,
-                    Uri.parse("tel:01054821638"));
-        }else {
-            Log.d("tel","실패띠~");
+                                    Uri.parse("tel:01071898634"));
+        }else{
+            Log.d("tel","실패");
             return;
         }
         startActivity(intent);
@@ -73,7 +73,5 @@ public class BasicAppRun extends AppCompatActivity {
             }
         }
 
-
     }
-
 }

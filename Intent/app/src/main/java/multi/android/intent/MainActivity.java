@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,
-                                    SecondActivity.class);
-                //intent에 공유할 데이터 저장 - 값을 넘기는 쪽
-                intent.putExtra("info","첫 번째 액티비티가 넘기는 메세지");
+                                            SecondActivity.class );
+                //intent에 공유할 데이터 저장
+                intent.putExtra("info",
+                        "첫 번째 액티비티가 넘기는 메시지");
                 intent.putExtra("num",10000);
 
                 startActivity(intent);

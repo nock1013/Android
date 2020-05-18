@@ -3,8 +3,8 @@
     package="multi.android.map_location_pro">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".location.BasicLocationTest2"></activity>
-        <activity android:name=".map.MainActivity">
+       <!-- <activity android:name=".location.LocationMapExam2"></activity>-->
+        <!-- <activity android:name=".map.MainActivity"></activity> -->
+        <activity android:name=".location.LocationMapExam2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCZXoobN--PjjekyZ6QxNvEcKYPE67FKOk" />
+            android:value="AIzaSyCBX_om8PnGlevs31DDIy1h4NeNSRlJEJg" />
     </application>
 
 </manifest>

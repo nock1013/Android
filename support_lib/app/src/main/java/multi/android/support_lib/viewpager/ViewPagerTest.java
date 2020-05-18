@@ -14,15 +14,15 @@ import java.util.ArrayList;
 
 import multi.android.support_lib.R;
 /*
-   화면 전활을 위해서 ViewPager를 사용하는 경우(ListView와 동일)
-   1. ViewPager에 담을 데이터 - View, Fragment
-   2. Adapter 커스터마이징
-   3. ViewPager에 Adapter연결하기
-*/
+ 화면 전환을 위해서 ViewPager를 사용하는 경우(ListView와 동일)
+ 1. ViewPager에 담을 데이터 - View , Fragment
+ 2. Adapter 커스트마이징
+ 3. ViewPager에 Adapter연결하기
+ */
 public class ViewPagerTest extends AppCompatActivity {
     //1. ViewPager에 표시할 뷰를 저장할 List
     ArrayList<View> viewlist = new ArrayList<View>();
-    ViewPager mainPager;
+    ViewPager mainPager ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,21 +38,19 @@ public class ViewPagerTest extends AppCompatActivity {
         viewlist.add(view1);
         viewlist.add(view2);
         viewlist.add(view3);
-        //3. ViewPager에 어뎁터 연결
-        MainPagerAdapter adapter = new MainPagerAdapter();
-        mainPager.setAdapter(adapter);
+        //3. ViewPager에 어댑터 연결
+        MainPagerAdapter adpater = new MainPagerAdapter();
+        mainPager.setAdapter(adpater);
     }
     //2. Adapter커스트마이징
     class MainPagerAdapter extends PagerAdapter{
-
-        //ViewPager를 통해 보여줄 뷰의 갯수 리턴
+        //ViewPager를 통해 보여줄 뷰의 갯수리턴
         @Override
         public int getCount() {
             return viewlist.size();
         }
-
         //ViewPager에 보여줄 뷰를 등록
-        //getView와 같은 역활을 한다.
+        //getView와 같은 역할
         @NonNull
         @Override
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
@@ -66,8 +64,9 @@ public class ViewPagerTest extends AppCompatActivity {
         }
 
         @Override
-        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-            mainPager.removeView((View) object);
+        public void destroyItem(@NonNull ViewGroup container, int position
+                                        , @NonNull Object object) {
+            mainPager.removeView((View)object);
         }
     }
 }

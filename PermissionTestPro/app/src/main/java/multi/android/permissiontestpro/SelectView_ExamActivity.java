@@ -27,8 +27,7 @@ public class SelectView_ExamActivity extends Activity {
         actorlist.add(actorItem);
         actorItem = new ActorItem(R.drawable.kbr,"김범룡","2020/04/06","진짜가수");
         actorlist.add(actorItem);
-        actorItem = new ActorItem(R.drawable.kim,"김서연","2020/04/06","이뻐");
-        actorlist.add(actorItem);
+
         actorItem = new ActorItem(R.drawable.kimdong,"이민호","2020/04/06","멋져");
         actorlist.add(actorItem);
         actorItem = new ActorItem(R.drawable.leemin,"이민호","2020/04/06","멋져");
@@ -43,8 +42,7 @@ public class SelectView_ExamActivity extends Activity {
         actorlist.add(actorItem);
         actorItem = new ActorItem(R.drawable.kbr,"김범룡","2020/04/06","진짜가수");
         actorlist.add(actorItem);
-        actorItem = new ActorItem(R.drawable.kim,"김서연","2020/04/06","이뻐");
-        actorlist.add(actorItem);
+
         actorItem = new ActorItem(R.drawable.kimdong,"이민호","2020/04/06","멋져");
         actorlist.add(actorItem);
         actorItem = new ActorItem(R.drawable.leemin,"이민호","2020/04/06","멋져");

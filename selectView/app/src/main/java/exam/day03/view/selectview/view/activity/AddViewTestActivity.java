@@ -10,17 +10,20 @@ import android.widget.LinearLayout;
 import exam.day03.view.selectview.R;
 
 public class AddViewTestActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final LinearLayout layout = new LinearLayout(this);
+        final LinearLayout layout  = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
-        //Layout만들기 - width, height지정
+
+        //Layout만들기 - width,height지정
         LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                             LinearLayout.LayoutParams.WRAP_CONTENT);
-        //Layout에 추가할 view를 생성 - 상위뷰의 크기 정보를 갖고 있는 LayoutParams를 설정
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        //Layout에 추가할 view를 생성 - 상위뷰의 크기 정보를 갖고 있는
+        //LayoutParams를 설정
         final Button btn = new Button(this);
         btn.setText("코드로 만들어진 버튼");
         btn.setLayoutParams(params);
@@ -30,7 +33,6 @@ public class AddViewTestActivity extends AppCompatActivity {
 
         setContentView(layout);
         btn.setOnClickListener(new View.OnClickListener() {
-            //context를 상속받고 있기 때문 this
             @Override
             public void onClick(View v) {
                 Button btn2 = new Button(AddViewTestActivity.this);
@@ -41,3 +43,9 @@ public class AddViewTestActivity extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
+

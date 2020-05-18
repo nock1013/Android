@@ -1,4 +1,4 @@
-package multi.android.datamanagementpro.Permission;
+package multi.android.datamanagementpro.permission;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,5 +21,6 @@ public class BasicPermissionTest extends AppCompatActivity {
         settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
         webView.loadUrl("https://m.daum.net");
+
     }
 }

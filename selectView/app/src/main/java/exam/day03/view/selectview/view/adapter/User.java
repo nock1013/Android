@@ -5,13 +5,10 @@ public class User {
     String name;
     String telNum;
 
-
     public User(int myImg, String name, String telNum) {
         this.myImg = myImg;
         this.name = name;
         this.telNum = telNum;
-
-
     }
 
     @Override

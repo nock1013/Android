@@ -3,6 +3,7 @@ package exam.day03.view.selectview;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -43,28 +44,22 @@ public class RadioActivity extends AppCompatActivity {
         int id2 = group2.getCheckedRadioButtonId();
         text1.setText(id1+"radio 버튼이 선택");
         text2.setText(id2+"radio 버튼이 선택");
-
     }
     class RadioListener implements RadioGroup.OnCheckedChangeListener{
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            Log.d("radio",group.getId()+",,,,,,,,,"+checkedId);
-            switch (group.getId()){
-                case R.id.group1 :
+            Log.d("radio",group.getId()+",,,,,,,"+checkedId);
+            switch(group.getId()){
+                case R.id.group1:
                     switch (checkedId){
                         case R.id.radioButton:
                             Log.d("radio","1번 그룹의 1-1버튼");
-                            break;
-                        case R.id.radioButton2:
-                            Log.d("radio","1번 그룹의 1-2버튼");
                     }
-
-                case R.id.group2 :
                     break;
+                case R.id.group2:
             }
         }
     }
-
 }
 
 

@@ -31,7 +31,7 @@ public class ChildFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_child,container,false);
+        View view = inflater.inflate(R.layout.fragment_child, container, false);
         TextView child_txt = view.findViewById(R.id.child_txt);
         child_txt.setText(title);
         return view;

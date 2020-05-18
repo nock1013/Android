@@ -9,24 +9,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import exam.day03.view.selectview.R;
 
 public class ResourceDataListActivity extends AppCompatActivity {
-    ListView listView;
+    ListView listview ;
     TextView txt;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_test);
-        listView = findViewById(R.id.listview1);
+        listview = findViewById(R.id.listview1);
         txt = findViewById(R.id.listTxt);
         //리소스로 저장되어 있는 데이터를 ListView에 출력
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
-                                                        R.array.mylist_data,
-                                                        android.R.layout.simple_list_item_1);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayAdapter adapter =
+                ArrayAdapter.createFromResource(this,
+                                R.array.mylist_data,
+                                android.R.layout.simple_list_item_1);
+        listview.setAdapter(adapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //View view매개변수가 목록을 구성하는 하나의 데이터가 출력되는
@@ -35,5 +37,6 @@ public class ResourceDataListActivity extends AppCompatActivity {
                 txt.setText(listTxt.getText());
             }
         });
+
     }
 }

@@ -3,10 +3,10 @@ package multi.android.intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-//안드로이드에서 인텐트에 객체를 공유하고 싶은 경우 Parcelable타입으로 반드시정의
-//=> Parcelablefmf implements하고 메소드를 적절하게오버라이딩
+//안드로이드에서 인텐트에 객체를 공유하고 싶은 경우 Parcelable타입으로 정의
+//=> Parcelable를 implements하고 메소드를 적절하게 오버라이딩
 
-public class User implements Parcelable {
+public class User  implements Parcelable {
     String name;
     String telNum;
 
@@ -14,8 +14,9 @@ public class User implements Parcelable {
         name = in.readString();
         telNum = in.readString();
     }
-    //안드로이드OS가 객체를 복원할때 CREATOR타입의 변수
-    //CREATOR를 찾아서 CREATOR의 createFromParcel를 호출한 후 반환되는 값을 이용해서 사용
+    //안드로이드OS가 객체를 복원할때 Creator타입의 변수
+    //CREATOR를 찾아서 CREATOR의 createFromParcel를 호출한 후 반환되는 값을 이용
+    //해서 사용
     public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
         public User createFromParcel(Parcel in) {
@@ -33,7 +34,6 @@ public class User implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(telNum);
-
     }
     public User(){
 
@@ -48,12 +48,12 @@ public class User implements Parcelable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getTelNum() {
         return telNum;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setTelNum(String telNum) {
@@ -64,5 +64,6 @@ public class User implements Parcelable {
     public int describeContents() {
         return 0;
     }
+
 
 }

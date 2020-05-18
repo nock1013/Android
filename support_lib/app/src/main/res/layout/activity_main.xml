@@ -30,13 +30,14 @@
         android:layout_height="wrap_content"
         android:text="두번째프레그먼트"/>
 
+
+
     <fragment
         android:id="@+id/fragment01"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:name="multi.android.support_lib.fragment.FirstFragment"
         />
-
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

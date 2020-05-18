@@ -11,12 +11,11 @@
         style="@android:style/Widget.DeviceDefault.ProgressBar.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
     <ProgressBar
         android:id="@+id/progress2"
         style="@android:style/Widget.DeviceDefault.ProgressBar.Large"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <ProgressBar
         android:id="@+id/progress3"
@@ -30,18 +29,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="5증가시키기"
+
         />
     <Button
         android:id="@+id/progressBtn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="5감소시키기"
+
         />
     <Button
         android:id="@+id/progressBtn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="값설정하기"
-        />
 
+        />
 </LinearLayout>

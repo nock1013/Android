@@ -14,7 +14,7 @@ public class Logo extends AppCompatActivity {
         public void run() {
             Intent intent = new Intent(Logo.this,HandlerExam2.class);
             startActivity(intent);
-            finish(); //현재 엑티비티는 없어짐
+            finish();
             //메인 액티비티로 전환될때 애니메이션효과를 추가
         }
     };
@@ -25,4 +25,5 @@ public class Logo extends AppCompatActivity {
         handler = new Handler();
         handler.postDelayed(runnable,5000);
     }
+
 }

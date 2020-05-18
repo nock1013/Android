@@ -6,10 +6,9 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:background="#0000ff"
         android:scaleType="centerCrop"
-        android:src="@drawable/ddd" />
-
+        android:src="@drawable/dog" />
 </LinearLayout>

@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnOK"
+        android:id="@+id/btnOk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
@@ -29,12 +29,20 @@
         android:id="@+id/btntest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="left"
         android:text="gravity_test" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:text="Button" />
-
 </LinearLayout>
+
+
+
+
+
+
+

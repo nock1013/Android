@@ -20,10 +20,10 @@ public class ActionBarNavi extends AppCompatActivity {
         showActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActionBarNavi.this,SubActivity.class);
+                Intent intent = new Intent(ActionBarNavi.this,
+                        SubActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
